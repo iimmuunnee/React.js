@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 // Component, props 개념
-import App from './App';
+// import App from './App';
 
 // 실습
 import AppSample from './AppSample';
@@ -11,8 +11,8 @@ import AppSample from './AppSample';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <App/>
-    // <AppSample />
+  // <App/>
+    <AppSample />
   // </React.StrictMode>
 );
 

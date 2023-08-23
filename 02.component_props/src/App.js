@@ -24,22 +24,6 @@ import Menubox from './components/Menubox';
 function App() {
   return (
     <div>
-      <div className="menu_item">
-        <h3>아메리카노</h3>
-        <p>3500</p>
-      </div>
-      <div className="menu_item">
-        <h3>아메리카노</h3>
-        <p>3500</p>
-      </div>
-      <div className="menu_item">
-        <h3>아메리카노</h3>
-        <p>3500</p>
-      </div>
-      {/* <Menubox name="아메리카노" price="3000"/>
-      <Menubox name="딸기 스무디" price="5000"/>
-      <Menubox name="말차 라떼" price="6000"/>
-      <Menubox name="메뉴 이름" price="가격"/> */}
       <MemberCard where="KIA" name="강병우"/>
       <MemberCard where="SSG" name="김광현"/>
       <MemberCard where="두산" name="김동주"/>
