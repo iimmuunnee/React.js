@@ -10,12 +10,16 @@ import reportWebVitals from './reportWebVitals';
 // 실습 2
 import Ex02 from './Ex02';
 
+// 실습 3 주사위 게임
+import Ex03 from './Ex03';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
     // <App />
     // <Ex01/>
-    <Ex02/>
+    // <Ex02/>
+    <Ex03/>
   // </React.StrictMode>
 );
 
