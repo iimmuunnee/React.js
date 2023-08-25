@@ -29,6 +29,7 @@ import "./style/ex03.css"
 */
 
 const Ex03 = () => {
+    const [round, setRound] = useState(1)
 
     const [myDice, mySet] = useState(1)
     const [comDice, comSet] = useState(1)
@@ -40,6 +41,7 @@ const Ex03 = () => {
     const handleDice = () => {
         let myNumber = Math.floor(Math.random()*6 + 1)
         let comNumber = Math.floor(Math.random()*6 + 1)
+        setRound(round + 1)
         mySet(myNumber)
         comSet(comNumber)
         if(myNumber > comNumber){
@@ -49,7 +51,8 @@ const Ex03 = () => {
             setComscore(comScore + 1)
         }
         else if (myNumber == comNumber){
-            alert("무승부")
+            setMyscore(myScore)
+            setComscore(comScore)
         }
     }
 
@@ -58,13 +61,15 @@ const Ex03 = () => {
         comSet(1)
         setMyscore(0)
         setComscore(0)
+        setRound(1)
     }
 
   return (
     <div className='container'>
+        <div>라운드 : {round}</div>
         <div className='button-area'>
-            <Button onClick={handleDice}>던지기</Button>
-            <Button onClick={reset}>Reset</Button>
+            <Button onClick={handleDice} variant='secondary'>던지기</Button>
+            <Button onClick={reset} variant='danger'>Reset</Button>
         </div>
   
         <div className='board-area'>
