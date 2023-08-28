@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 // import Ex01 from './Ex01';
 import Ex02 from "./Ex02";
+// import Ex03 from './Ex03';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     // <App />
     // <Ex01 />
     <Ex02 />
+    // <Ex03/>
   // </React.StrictMode>
 );
 
