@@ -14,7 +14,8 @@ const Ex03 = () => {
     console.log(new_array);
 
     let age_27 = members.filter((member) => member.age < 27)
-    // console.log(age_27);
+    console.log(age_27);
+    
   return (
     <div>
     </div>
