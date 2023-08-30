@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import {useState, useRef} from "react"
 
 
@@ -30,13 +30,13 @@ function App() {
   const handleClick2 = () => {
     setState(countState + 1)
     console.log("state", countState);
-    console.log("스테이트눌렀을때",countVar);
-    console.log("스테이트눌렀을때",countRef.current);
+    // console.log("스테이트눌렀을때 var : ",countVar);
+    // console.log("스테이트눌렀을때 ref : ",countRef.current);
   }
 
   const handleClick3 = () => {
     countRef.current += 1
-    console.log(("ref",countRef.current));
+    console.log(("ref : ",countRef.current));
   }
 
   return (
