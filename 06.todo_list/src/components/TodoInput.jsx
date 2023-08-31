@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import {v4 as uuidv4} from 'uuid'
 
 const TodoInput = ({todos, setTodos}) => {
     let inputRef = useRef("")
@@ -7,7 +8,7 @@ const TodoInput = ({todos, setTodos}) => {
         let inputText = inputRef.current.value
         if (inputText != ""){
             console.log(inputText);
-            setTodos([...todos, {id: todos.length, text : inputText, complete: false} ])
+            setTodos([...todos, {id: uuidv4(), text : inputText, complete: false} ])
         }
         inputRef.current.value = ""
         inputRef.current.focus()
