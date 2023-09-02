@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+// eslint-disable-next-line
 
 const Random = () => {
   const [myNum, setMyNum] = useState()
-  const [ranNum, setRanNum] = useState()
+  const [randomState, setRanNum] = useState()
   const [answer, setAnswer] = useState("")
   
   const handleNum = (e) => {
@@ -11,7 +12,7 @@ const Random = () => {
       setMyNum(my_number)
       console.log(myNum);
       setRanNum(randNum)
-      console.log(ranNum);
+      console.log(randomState);
       if (my_number == randNum){
         setAnswer("정답입니다~") 
       }
@@ -23,11 +24,11 @@ const Random = () => {
 
   return (
     <div style={{margin : "10px"}}>
-        <button onClick={handleNum}>1</button>
-        <button onClick={handleNum}>2</button>
-        <button onClick={handleNum}>3</button>
+        <button onClick={handleNum} style={{backgroundColor : "red"}}>1</button>
+        <button onClick={handleNum} style={{backgroundColor : "orange"}}>2</button>
+        <button onClick={handleNum} style={{backgroundColor : "green"}}>3</button>
         <div>내가 입력한 숫자 : {myNum}</div>
-        <div>랜덤한 숫자 : {ranNum}</div>
+        <div>랜덤한 숫자 : {randomState}</div>
         {answer}
     </div>
   )
