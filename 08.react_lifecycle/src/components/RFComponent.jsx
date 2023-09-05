@@ -31,22 +31,29 @@ const RFComponent = () => {
     useEffect(() => {
         console.log("3. componentDidMount 대체 => 화면 렌더링 완료!");
     }, []) // 배열은 빈배열이라면 생략 가능
+    
+    useEffect(() => {
+        console.log("num or num2 state 변화 감지");
+    }, [num, num2])
+
+    useEffect(() => {
+        return () => {
+            console.log("Unmount 감지");
+        }
+    }, []) 
 
     // componentDidUpdate 대체 => 배열안에 state를 넣어주기
     // useEffect(() => {실행 로직}, [변화를 감지 할 state])
     // - 특정 state가 변화할 때 실행 : 배열안에 들어있는 state가 변할 때만 실행
-
+    
     // useEffect(() => {
-    //     console.log("componentDidUpdate 대체 => [state] 배열안에 state 넣어주기");
-    // }, [num])
-
-    // useEffect(() => {
-    //     console.log("num2 state 변화 감지");
-    // }, [num2])
-
-    useEffect(() => {
-        console.log("num or num2 state 변화 감지");
-    }, [num, num2])
+        //     console.log("componentDidUpdate 대체 => [state] 배열안에 state 넣어주기");
+        // }, [num])
+        
+        // useEffect(() => {
+            //     console.log("num2 state 변화 감지");
+            // }, [num2])
+            
 
   return (
       <div>
