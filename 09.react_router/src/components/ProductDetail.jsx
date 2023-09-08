@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ProductDetail = () => {
 
@@ -13,6 +14,7 @@ const ProductDetail = () => {
     <div>
         <h1>ProductDetail</h1>
         <p>상품번호 : {pro_no}</p>
+        <Link to={'/'}>Home 페이지로 이동하기!</Link>
     </div>
   )
 }
