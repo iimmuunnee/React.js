@@ -16,7 +16,7 @@ const GoodsDetail = () => {
   //getGoods함수를 구현하시오.
   //요청URL : http://localhost:3004/goods_list/상품id
   const getGoods = async () => {
-    let response = await axios(`http://localhost:3004/goods_list/${id}`)
+    let response = await axios.get(`http://localhost:3004/goods_list/${id}`)
     console.log(response.data);
     setGood(response.data)
   }
@@ -29,6 +29,8 @@ const GoodsDetail = () => {
 
   return (
     <div className="goods-detail-box">
+      {/* good state에 정보가 있을 때 property에 접근하도록 조건부 렌더링 처리 */}
+      {good ? <>
       <div className="goods-detail-box-thumb">
         <img src={good?.detail.sub_thumb} alt="이미지" />
       </div>
@@ -39,15 +41,16 @@ const GoodsDetail = () => {
             <em className="goods-new">new</em>
             <em className="goods-best">best</em>
           </div>
-          <p className="goods-detail-name">{good?.name}</p>
-          <p className="goods-detail-txt">{good?.detail.txt}</p>
+          <p className="goods-detail-name">{good.name}</p>
+          <p className="goods-detail-txt">{good.detail.txt}</p>
           <div className="goods-detail-price-box">
-            <strong>{good?.price}</strong>
+            <strong>{good.price}</strong>
             <span>원</span>
           </div>
         </div>
-        <div className="goods-detail-summary">{good?.detail.summary}</div>
+        <div className="goods-detail-summary">{good.detail.summary}</div>
       </div>
+      </> : ""}
     </div>
   );
 };
