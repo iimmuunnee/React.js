@@ -18,9 +18,7 @@ function App() {
   const [authenticate, setauthenticate] = useState(false)
   const [goods, setGoods] = useState()
 
-  const PrivateRoute = ({authenticate}) => {
-    return (authenticate ? <GoodsDetail/> : <Navigate to={"/login"}/>)
-  }
+
 
 
   useEffect(() => {
