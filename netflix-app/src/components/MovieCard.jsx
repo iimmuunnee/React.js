@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import axios from '../api'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({ info }) => {
 
   const {genreList} = useSelector((state) => state.movie)
   // 장르 번호별 리스트 
   console.log(genreList);
-
+  // console.log("dasfdasdasf", info);
   const backgroundImg = info.poster_path
   const movieTitle = info.title
   const movieGenre = info.genre_ids // 영화 별 장르 리스트
   const movieVote_average = info.vote_average
   const movieAdult = info.adult
+
+  const navigate = useNavigate()
 
 
   const div_Style = {
@@ -22,10 +24,15 @@ const MovieCard = ({ info }) => {
     margin: "10px",
     height: "330px",
     width: "220px",
+    cursor : "pointer"
+  }
+
+  const handleCard = () => {
+    navigate(`/movies/${info.id}`)
   }
 
   return (
-    <div style={div_Style} className='movieCard'>
+    <div style={div_Style} className='movieCard' onClick={handleCard}>
       <div className='movieInfobox'>
         <div className='movieInfo'>
           <h2>{movieTitle}</h2>

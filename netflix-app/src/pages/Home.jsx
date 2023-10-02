@@ -4,11 +4,6 @@ import { MovieReducerActions } from "../redux/reducers/movieSlice"
 import axios from '../api'
 import Banner from '../components/Banner'
 import MovieSlide from '../components/MovieSlide'
-import SyncLoader from 'react-spinners/SyncLoader'
-import ClipLoader from "react-spinners/ClipLoader";
-import CircleLoader from "react-spinners/CircleLoader";
-import RingLoader from "react-spinners/RingLoader";
-import MoonLoader from "react-spinners/MoonLoader";
 import FadeLoader from "react-spinners/FadeLoader";
 
 

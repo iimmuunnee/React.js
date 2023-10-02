@@ -68,3 +68,16 @@ li:hover .movieCard .movieInfobox, .movieCard{
 .movieInfo{
     padding: 20px;
 }
+
+.movieDetail{
+    flex-direction: row;
+}
+
+.genres{
+    margin-bottom: 30px;
+}
+
+.dateRuntime{
+    display: flex;
+    justify-content: space-between;
+}
