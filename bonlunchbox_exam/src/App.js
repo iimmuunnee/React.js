@@ -4,8 +4,9 @@ import Footer from "./components/Footer"
 import Main from "./page/Main"
 import Login from "./page/Login"
 import GoodsList from "./page/GoodsList"
-import GoodsDetail from "./page/GoodsDetail"
-// import Main from "./page/Main"
+import GoodsDetail from './page/GoodsDetail'
+// import PrivateRoute from "./routes/PrivateRoute";
+
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
@@ -17,9 +18,8 @@ function App() {
   const [authenticate, setauthenticate] = useState(false)
   const [goods, setGoods] = useState()
 
-  const PrivateRoute = () => {
-    return authenticate? <GoodsList goods={goods} setGoods={setGoods}/> : <Navigate to={"/login"}/>
-  }
+
+
 
   useEffect(() => {
     console.log(authenticate);
@@ -35,9 +35,9 @@ function App() {
         */}
         <Routes>
           <Route path="/" element={<Main/>} />
-          <Route path="/goodslist" element={<PrivateRoute/>}/>
-          <Route path="/goodsdetail/:id" element={<GoodsDetail/>} />
-          <Route path="/login" element={<Login authenticate={authenticate} setauthenticate={setauthenticate} />} />
+          <Route path="/goodslist" element={<GoodsList goods={goods} setGoods={setGoods} />}/>
+          <Route path="/goodsdetail/:id" element={<PrivateRoute authenticate={authenticate}/>} />
+          <Route path="/login" element={<Login setauthenticate={setauthenticate} />} />
         </Routes>
 
       {/* Footer컴포넌트가 출력되도록 구현하시오. */}

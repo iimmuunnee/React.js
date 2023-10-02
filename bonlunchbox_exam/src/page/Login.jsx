@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({authenticate, setauthenticate}) => {
+const Login = ({setauthenticate}) => {
 
   const navigate = useNavigate()
 
   //submit 버튼 클릭 시, 로그인 상태값을 전환하고 메인 페이지로 이동되도록 구현하시오.
-  const loginTrue = () => {
+  const loginTrue = (e) => {
+    e.preventDefault() // 이벤트 동작을 중단시키는 함수
     setauthenticate(true)
     navigate("/")
   }
