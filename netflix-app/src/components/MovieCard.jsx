@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import axios from '../api'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 const MovieCard = ({ info }) => {
 
-  const {genreList} = useSelector((state) => state.movie)
+  const navigate = useNavigate()
+
+  const { genreList } = useSelector((state) => state.movie)
   // 장르 번호별 리스트 
   console.log(genreList);
 
@@ -24,21 +26,31 @@ const MovieCard = ({ info }) => {
     width: "220px",
   }
 
+  const handleCard = () => {
+    navigate(`/movies/${info.id}`)
+  }
+
   return (
-    <div style={div_Style} className='movieCard'>
+    <div style={div_Style} className='movieCard' onClick={handleCard}>
       <div className='movieInfobox'>
         <div className='movieInfo'>
-          <h2>{movieTitle}</h2>
-          <Stack direction="horizontal" gap={2}>
-            {movieGenre.map((item) => (
-              <Badge bg="danger" key={item}>
-                {genreList.find((genre) => (
-                  genre.id === item
-                )).name}
-              </Badge>
-            ))}
-          </Stack>
-          <p style={{fontWeight : "bold"}}>평점 : {movieVote_average} | {movieAdult?"성인":"청소년"}</p>
+          <div style={{marginBottom : "10px"}}>
+            <h2>{movieTitle}</h2>
+          </div>
+          <div>
+            <Stack direction="horizontal" gap={2}>
+              {movieGenre.map((item) => (
+                <Badge bg="danger" key={item}>
+                  {genreList.find((genre) => (
+                    genre.id === item
+                  )).name}
+                </Badge>
+              ))}
+            </Stack>
+          </div>
+          <div className='vote'>
+            <p style={{ fontWeight: "bold" }}>평점 : {movieVote_average} | {movieAdult ? "성인" : "청소년"}</p>
+          </div>
         </div>
       </div>
     </div>

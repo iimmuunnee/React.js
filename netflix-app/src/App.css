@@ -55,7 +55,7 @@ body{
 
 .movieCard{
     background-color: rgba(0, 0, 0, 0.3);
-    /* transition: 0.3s; */
+    cursor : pointer;
 }
 
 li:hover .movieCard .movieInfobox, .movieCard{
@@ -67,4 +67,12 @@ li:hover .movieCard .movieInfobox, .movieCard{
 
 .movieInfo{
     padding: 20px;
+    position: relative;
+    height: 330px;
+    width: 220px;
+}
+
+.vote{
+    position: absolute;
+    bottom : 90;
 }
