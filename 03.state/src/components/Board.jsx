@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 const Board = ({name, dice, comdice, score, comScore}) => {
 
-    let dice1 = dice != undefined ? dice : comdice
+    let dice1 = dice !== undefined ? dice : comdice
     console.log(dice1);
     let $dice = `img/dice${dice1}.png`
-    let $score = score != undefined ? score : comScore
+    let $score = score !== undefined ? score : comScore
 
   return (
     <div>

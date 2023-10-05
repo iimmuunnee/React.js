@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// 설명
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// 컬러리스트 실습 1
-import Ex01 from './Ex01';
-
-// 실습 2
-import Ex02 from './Ex02';
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
+  <Provider store={store}>
     <App />
-    // <Ex01/>
-    // <Ex02/>
+  </Provider>
   // </React.StrictMode>
 );
 

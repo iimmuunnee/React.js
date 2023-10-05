@@ -10,20 +10,20 @@ const MovieCard = ({ info }) => {
 
   const { genreList } = useSelector((state) => state.movie)
   // 장르 번호별 리스트 
-  console.log(genreList);
-
+  console.log("dasfdfafdasf",info);
+  // console.log("dasfdasdasf", info);
   const backgroundImg = info.poster_path
   const movieTitle = info.title
   const movieGenre = info.genre_ids // 영화 별 장르 리스트
   const movieVote_average = info.vote_average
   const movieAdult = info.adult
 
-
   const div_Style = {
     backgroundImage: `url(https://www.themoviedb.org/t/p/w220_and_h330_face${backgroundImg})`,
     margin: "10px",
     height: "330px",
     width: "220px",
+    cursor : "pointer"
   }
 
   const handleCard = () => {
@@ -41,6 +41,7 @@ const MovieCard = ({ info }) => {
             <Stack direction="horizontal" gap={2}>
               {movieGenre.map((item) => (
                 <Badge bg="danger" key={item}>
+                  {/* find() : 일치한 정보 중 첫번째 요소만 반환하는 함수 */}
                   {genreList.find((genre) => (
                     genre.id === item
                   )).name}
